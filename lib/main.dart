@@ -11,31 +11,33 @@ import 'package:get/get.dart';
 import 'package:tikum_mobile/pages/profile/login.dart';
 import 'package:tikum_mobile/pages/profile/register.dart';
 import 'package:tikum_mobile/helper/dependencies.dart' as dep;
+import 'package:tikum_mobile/resource/Mycolor.dart';
+import 'package:tikum_mobile/screen/splash_screen.dart';
 
-Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await dep.init();
+void main() async {
+  // WidgetsFlutterBinding.ensureInitialized();
+  // await dep.init();
   runApp(const MyApp());
 }
- 
+
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-      Get.find<PopularProductController>().getPopularProductList();
-    return GetMaterialApp(
+    // Get.find<PopularProductController>().getPopularProductList();
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        scaffoldBackgroundColor: Colors.white,
-      ),
-      routes: {
-        "/": (context) => FoodPageBody(),
-        // "/": (context) => MainFoodPage(),
-        // "/": (context) => HomePage(),
-        "cartPage": (context) => CartPage(),
-        "itemPage": (context) => ItemPage()
-      },
+          scaffoldBackgroundColor: Colors.white, primarySwatch: Colors.grey),
+      home: SplashScreen(),
+      // routes: {
+      //   "/": (context) => FoodPageBody(),
+      //   // "/": (context) => MainFoodPage(),
+      //   // "/": (context) => HomePage(),
+      //   "cartPage": (context) => CartPage(),
+      //   "itemPage": (context) => ItemPage()
+      // },
     );
   }
 } 
