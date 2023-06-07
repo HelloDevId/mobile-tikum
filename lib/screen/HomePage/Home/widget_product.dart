@@ -122,7 +122,7 @@ class _WidgetProductState extends State<WidgetProduct> {
                             children: [
                               Container(
                                 height: 125,
-                                width: 180,
+                                width: 150,
                                 decoration: BoxDecoration(
                                     image: DecorationImage(
                                         image: NetworkImage(
@@ -135,7 +135,7 @@ class _WidgetProductState extends State<WidgetProduct> {
                                 width: 10,
                               ),
                               SizedBox(
-                                width: 190,
+                                width: 120,
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
