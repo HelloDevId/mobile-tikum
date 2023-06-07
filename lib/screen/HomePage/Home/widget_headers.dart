@@ -97,45 +97,22 @@ class _WidgetHeadersState extends State<WidgetHeaders> {
                                   height: 8,
                                 ),
                                 Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.end,
                                   children: [
-                                    Icon(
-                                      Icons.star,
-                                      color: product.rating! >= 1
-                                          ? Colors.amber
-                                          : Colors.grey,
-                                      size: 16,
-                                    ),
-                                    Icon(
-                                      Icons.star,
-                                      color: product.rating! >= 2
-                                          ? Colors.amber
-                                          : Colors.grey,
-                                      size: 16,
-                                    ),
-                                    Icon(
-                                      Icons.star,
-                                      color: product.rating! >= 3
-                                          ? Colors.amber
-                                          : Colors.grey,
-                                      size: 16,
-                                    ),
-                                    Icon(
-                                      Icons.star,
-                                      color: product.rating! >= 4
-                                          ? Colors.amber
-                                          : Colors.grey,
-                                      size: 16,
-                                    ),
-                                    Icon(
-                                      Icons.star,
-                                      color: product.rating! >= 5
-                                          ? Colors.amber
-                                          : Colors.grey,
-                                      size: 16,
-                                    ),
+                                    for (int i = 1; i <= 5; i++)
+                                      Icon(
+                                        product.rating! >= i
+                                            ? Icons.star
+                                            : (product.rating! >= i - 0.5
+                                                ? Icons.star_half
+                                                : Icons.star_border),
+                                        color: product.rating! >= i
+                                            ? Colors.amber
+                                            : Colors.amber,
+                                        size: 16,
+                                      ),
                                   ],
-                                )
+                                ),
                               ],
                             ),
                           ),
