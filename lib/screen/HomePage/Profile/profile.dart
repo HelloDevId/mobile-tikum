@@ -45,10 +45,10 @@ class _ProfileState extends State<Profile> {
       descTextStyle: MyFont.poppins(fontSize: 12, color: softgrey),
       btnOkOnPress: () {
         authServices.logout(context);
-      },
-      btnCancelOnPress: () {
         Fluttertoast.showToast(
             msg: "Berhasil Logout", backgroundColor: Colors.green);
+      },
+      btnCancelOnPress: () {
         Navigator.pushAndRemoveUntil(
             context,
             MaterialPageRoute(
