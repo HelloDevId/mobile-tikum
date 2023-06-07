@@ -25,9 +25,11 @@ class Product {
     nama = json['nama'];
     image = json['image'];
     deskripsi = json['deskripsi'];
-    harga = json['harga'];
+    harga = int.parse(json['harga']);
     jumlahTerjual = json['jumlah_terjual'];
-    rating = json['rating'].toDouble();
+    if (json['rating'] != null) {
+      rating = double.tryParse(json['rating']);
+    }
     createdAt = json['created_at'];
     updatedAt = json['updated_at'];
   }

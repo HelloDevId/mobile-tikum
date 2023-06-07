@@ -20,7 +20,7 @@ class User {
     id = json['id'];
     nama = json['nama'];
     email = json['email'];
-    idRole = json['id_role'];
+    idRole = int.parse(json['id_role']);
     noHp = json['no_hp'];
     createdAt = json['created_at'];
     updatedAt = json['updated_at'];
