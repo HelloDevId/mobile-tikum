@@ -3,7 +3,8 @@ class Product {
   String? nama;
   String? image;
   String? deskripsi;
-  int? harga;
+  String? harga;
+  int? idKategori;
   String? jumlahTerjual;
   double? rating;
   String? createdAt;
@@ -15,6 +16,7 @@ class Product {
       this.image,
       this.deskripsi,
       this.harga,
+      this.idKategori,
       this.jumlahTerjual,
       this.rating,
       this.createdAt,
@@ -25,11 +27,13 @@ class Product {
     nama = json['nama'];
     image = json['image'];
     deskripsi = json['deskripsi'];
-    harga = int.parse(json['harga']);
+    harga = json['harga'];
+    idKategori = json['id_kategori'];
     jumlahTerjual = json['jumlah_terjual'];
-    if (json['rating'] != null) {
-      rating = double.tryParse(json['rating']);
-    }
+    // if (json['rating'] != null) {
+    //   rating = double.tryParse(json['rating']);
+    // }
+    rating = json['rating'].toDouble();
     createdAt = json['created_at'];
     updatedAt = json['updated_at'];
   }
@@ -41,6 +45,7 @@ class Product {
     data['image'] = this.image;
     data['deskripsi'] = this.deskripsi;
     data['harga'] = this.harga;
+    data['id_kategori'] = this.idKategori;
     data['jumlah_terjual'] = this.jumlahTerjual;
     data['rating'] = this.rating;
     data['created_at'] = this.createdAt;

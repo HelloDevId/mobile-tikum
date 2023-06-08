@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:tikum_mobile/models/model.dart';
 import 'package:tikum_mobile/models/product.dart';
 import 'package:http/http.dart' as http;
 import 'package:tikum_mobile/models/reservasi.dart';
@@ -52,8 +53,9 @@ class ApiServices {
     }
   }
 
-  Future<List<Product>> getProduct() async {
-    final response = await http.get(Uri.parse(ApiConnect.product));
+  Future<List<Product>> getProduct(String id) async {
+    final response = await http
+        .post(Uri.parse(ApiConnect.product), body: {"id_kategori": id});
     if (response.statusCode == 200) {
       List jsonResponse = json.decode(response.body)['data'];
       return jsonResponse.map((e) => Product.fromJson(e)).toList();
@@ -67,6 +69,16 @@ class ApiServices {
     if (response.statusCode == 200) {
       List jsonResponse = json.decode(response.body)['data'];
       return jsonResponse.map((e) => Meja.fromJson(e)).toList();
+    } else {
+      throw Exception('Failed to load');
+    }
+  }
+
+  Future<List<Kategori>> getKategori() async {
+    final response = await http.get(Uri.parse(ApiConnect.kategori));
+    if (response.statusCode == 200) {
+      List jsonResponse = json.decode(response.body)['data'];
+      return jsonResponse.map((e) => Kategori.fromJson(e)).toList();
     } else {
       throw Exception('Failed to load');
     }

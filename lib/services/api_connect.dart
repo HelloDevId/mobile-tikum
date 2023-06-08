@@ -1,5 +1,5 @@
 class ApiConnect {
-  static const connectapi = "http://tikum.jokidong.site";
+  static const connectapi = "http://192.168.43.199:8000";
   static const connectHost = "$connectapi/api";
   static const connectimage = "$connectapi/images/product/";
 
@@ -10,6 +10,7 @@ class ApiConnect {
 
   static const product = "$connectHost/product";
   static const table = "$connectHost/table";
+  static const kategori = "$connectHost/kategori";
   static const producttop = "$connectHost/product-top";
   static const reservasistatus = "$connectHost/reservasi-status";
   static const addreservasi = "$connectHost/reservasi-add";
