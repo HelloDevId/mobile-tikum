@@ -35,10 +35,12 @@ class _HomeState extends State<Home> {
         backgroundColor: white,
         shadowColor: Colors.transparent,
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [WidgetHeaders(), WidgetTitleProduct(), WidgetProduct()],
+      body: Scrollbar(
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [WidgetHeaders(), WidgetTitleProduct(), WidgetProduct()],
+          ),
         ),
       ),
     );

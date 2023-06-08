@@ -94,6 +94,7 @@ class _WidgetProductState extends State<WidgetProduct> {
                   // height: MediaQuery.of(context).size.height * 0.3,
                   child: ListView.builder(
                     shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
                     scrollDirection: Axis.vertical,
                     itemCount: isSearching
                         ? _getFilteredProductList(data, searchController.text)!
