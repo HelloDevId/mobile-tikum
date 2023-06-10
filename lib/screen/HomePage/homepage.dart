@@ -40,9 +40,6 @@ class _HomePageState extends State<HomePage> {
   void onTap(value) {
     setState(() {
       index = value;
-      // _currentUser.getUserInfo();
-      // _getUserInfo();
-      // print(userData);
     });
   }
 

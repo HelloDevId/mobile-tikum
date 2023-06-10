@@ -5,7 +5,6 @@ import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tikum_mobile/screen/HomePage/homepage.dart';
 import 'package:tikum_mobile/resource/MyTextField.dart';
-import 'package:tikum_mobile/resource/MyTextField_Pengajuan.dart';
 import 'package:tikum_mobile/resource/Mycolor.dart';
 import 'package:tikum_mobile/resource/Myfont.dart';
 import 'package:tikum_mobile/screen/register_screen.dart';

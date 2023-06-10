@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tikum_mobile/models/model.dart';
+import 'package:tikum_mobile/models/kategori.dart';
 import 'package:tikum_mobile/models/product.dart';
 import 'package:tikum_mobile/resource/Mycolor.dart';
 import 'package:tikum_mobile/resource/Myfont.dart';
@@ -29,6 +29,7 @@ class _HomeState extends State<Home> {
     loadCategoryNames();
   }
 
+  //get name kategori
   Future<void> loadCategoryNames() async {
     try {
       categories = await apiServices.getKategori();

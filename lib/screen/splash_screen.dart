@@ -18,14 +18,12 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   bool _isLoggedIn = false;
-  // String _userRole = '';
+
   void _checkIfLoggedIn() async {
     // check if token is there
     SharedPreferences localStorage = await SharedPreferences.getInstance();
     var token = localStorage.getString('token');
     if (token != null) {
-      var userJson = localStorage.getString('user');
-      var role = localStorage.getString('role');
       setState(() {
         _isLoggedIn = true;
       });

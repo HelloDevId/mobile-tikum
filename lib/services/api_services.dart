@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:tikum_mobile/models/model.dart';
+import 'package:tikum_mobile/models/kategori.dart';
 import 'package:tikum_mobile/models/product.dart';
 import 'package:http/http.dart' as http;
 import 'package:tikum_mobile/models/reservasi.dart';
@@ -11,6 +11,7 @@ import 'package:tikum_mobile/screen/login_screen.dart';
 import 'package:tikum_mobile/services/api_connect.dart';
 
 class ApiServices {
+  //logout
   Future logout(BuildContext context) async {
     try {
       final prefs = await SharedPreferences.getInstance();
@@ -33,6 +34,7 @@ class ApiServices {
     }
   }
 
+  //get data user login
   Future<User?> me() async {
     try {
       final prefs = await SharedPreferences.getInstance();
@@ -53,6 +55,7 @@ class ApiServices {
     }
   }
 
+  //get product
   Future<List<Product>> getProduct(String id) async {
     final response = await http
         .post(Uri.parse(ApiConnect.product), body: {"id_kategori": id});
@@ -64,6 +67,7 @@ class ApiServices {
     }
   }
 
+  //get no meja
   Future<List<Meja>> getTable() async {
     final response = await http.get(Uri.parse(ApiConnect.table));
     if (response.statusCode == 200) {
@@ -74,6 +78,7 @@ class ApiServices {
     }
   }
 
+  //get kategori
   Future<List<Kategori>> getKategori() async {
     final response = await http.get(Uri.parse(ApiConnect.kategori));
     if (response.statusCode == 200) {
@@ -84,6 +89,7 @@ class ApiServices {
     }
   }
 
+  //get top product
   Future<List<Product>> getProductTop() async {
     final response = await http.get(Uri.parse(ApiConnect.producttop));
     if (response.statusCode == 200) {
@@ -94,6 +100,7 @@ class ApiServices {
     }
   }
 
+  //get reservasi
   Future<List<Reservasi>> getreservasi(String status) async {
     final prefs = await SharedPreferences.getInstance();
     final token = prefs.getString('token');

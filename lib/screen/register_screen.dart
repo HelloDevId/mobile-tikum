@@ -25,7 +25,8 @@ class _RegisterPageState extends State<RegisterPage> {
   final formKey = GlobalKey<FormState>();
   bool showpass = true;
   bool isLoading = false;
-  String errorMsg = '';
+  // String errorMsg = '';
+
   void verifyRegister() {
     if (email.text.isEmpty) {
       Fluttertoast.showToast(

@@ -24,8 +24,8 @@ class Reservasi {
 
   Reservasi.fromJson(Map<String, dynamic> json) {
     id = json['id'];
-    idUser = int.parse(json['id_user']);
-    idMeja = int.parse(json['id_meja']);
+    idUser = json['id_user'];
+    idMeja = json['id_meja'];
     tanggal = json['tanggal'];
     status = json['status'];
     createdAt = json['created_at'];
@@ -63,7 +63,7 @@ class Meja {
 
   Meja.fromJson(Map<String, dynamic> json) {
     id = json['id'];
-    noMeja = int.parse(json['no_meja']);
+    noMeja = json['no_meja'];
     createdAt = json['created_at'];
     updatedAt = json['updated_at'];
   }
